@@ -1,1 +1,545 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swati Gupta | Career Portfolio</title>
+  <meta
+    name="description"
+    content="Career portfolio of Swati Gupta featuring experience, projects, skills, and contact details."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-soft: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-strong: #0ea5e9;
+      --accent: #22c55e;
+      --max-width: 1080px;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(2, 6, 23, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      background: linear-gradient(180deg, #020617 0%, var(--bg) 55%, #0b1120 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(2, 6, 23, 0.7);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 5rem 0 3.5rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .cta-group {
+      margin-top: 1.6rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.7rem 1.1rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #082f49;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-strong);
+      color: #082f49;
+    }
+
+    .btn-secondary {
+      border-color: rgba(148, 163, 184, 0.45);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: linear-gradient(160deg, var(--surface) 0%, #111827 100%);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+
+    .stat {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+      padding: 0.75rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.15rem;
+      color: var(--primary);
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-title {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      font-size: 1.65rem;
+    }
+
+    .section-subtitle {
+      margin-top: 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+    }
+
+    .about-card {
+      grid-column: span 7;
+    }
+
+    .highlights-card {
+      grid-column: span 5;
+    }
+
+    .highlights-list {
+      margin: 0;
+      padding-left: 1rem;
+      color: var(--muted);
+    }
+
+    .timeline .item + .item {
+      margin-top: 1rem;
+    }
+
+    .item {
+      border-left: 2px solid rgba(56, 189, 248, 0.45);
+      padding-left: 0.9rem;
+    }
+
+    .item h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .item .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0.2rem 0 0.45rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    .project {
+      grid-column: span 4;
+    }
+
+    .project h4 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+    }
+
+    .project p {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.6rem;
+      color: var(--muted);
+    }
+
+    .contact-list strong {
+      color: var(--text);
+      margin-right: 0.35rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      margin-top: 2rem;
+      padding: 1rem 0 2.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card,
+      .highlights-card,
+      .project {
+        grid-column: span 12;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Swati<span>Codes</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <h1>Hi, I am <span>Swati Gupta</span>.<br />I build scalable Salesforce solutions.</h1>
+        <p>
+          Dedicated Salesforce Developer with 5+ years of experience designing, implementing, and
+          customizing Sales Cloud and Service Cloud solutions for enterprise clients. I focus on
+          clean architecture, reliable integrations, and high-impact business outcomes.
+        </p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="#projects">View My Work</a>
+          <a class="btn btn-secondary" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Quick Snapshot</h3>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>3+ Years</strong>
+            <span>Professional Experience</span>
+          </div>
+          <div class="stat">
+            <strong>2 Major Employers</strong>
+            <span>Salesforce + Infosys</span>
+          </div>
+          <div class="stat">
+            <strong>5 Certifications</strong>
+            <span>Salesforce Certified</span>
+          </div>
+          <div class="stat">
+            <strong>Domain Focus</strong>
+            <span>Sales Cloud / Service Cloud</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        I turn business requirements into maintainable Salesforce implementations through strong
+        SDLC ownership, modern UI development, and robust integration design.
+      </p>
+      <div class="card-grid">
+        <article class="card about-card">
+          <p>
+            I have worked across enterprise accounts including Mercedes, BMW, Toshiba, and Gore
+            International. My experience spans requirements analysis, custom solution design,
+            development, testing, deployment, and release orchestration.
+          </p>
+          <p>
+            I specialize in Apex, Lightning Web Components, SOQL/SOSL optimization, and API-based
+            integrations using REST and SOAP. I enjoy building event-driven and asynchronous
+            systems that scale reliably with growing business needs.
+          </p>
+        </article>
+        <aside class="card highlights-card">
+          <h3>Highlights</h3>
+          <ul class="highlights-list">
+            <li>Led Salesforce solution delivery for global clients including Mercedes and BMW.</li>
+            <li>Built LWC-based responsive interfaces and reusable component patterns.</li>
+            <li>Implemented platform events, batch classes, and future methods at scale.</li>
+            <li>Received Infosys INSTA recognition for project impact and documentation quality.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">Roles where I delivered Salesforce implementations end-to-end.</p>
+      <div class="card timeline">
+        <article class="item">
+          <h4>Developer - Salesforce</h4>
+          <p class="meta">May 2022 - Present | Bangalore, Telangana</p>
+          <p>
+            Led development and implementation of Salesforce solutions for Mercedes and BMW,
+            including Sales Cloud customization, LWC development, SOQL/SOSL query design, and
+            integrations via REST/SOAP APIs. Built asynchronous capabilities with batch Apex,
+            future methods, platform events, outbound messages, and Apex callouts.
+          </p>
+        </article>
+        <article class="item">
+          <h4>Salesforce Developer - Infosys</h4>
+          <p class="meta">Aug 2020 - Apr 2022 | Bangalore, Karnataka</p>
+          <p>
+            Managed SDLC for Toshiba and Gore International across requirements, development, test,
+            deployment, and release planning in Sales Cloud and Service Cloud. Contributed to
+            Infosys Cobalt knowledge sharing, delivered comprehensive unit testing/documentation,
+            and earned the INSTA recognition award.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Representative implementation areas from enterprise engagements.</p>
+      <div class="card-grid">
+        <article class="card project">
+          <h4>Sales Cloud Customization</h4>
+          <p>
+            Configured and customized Sales Cloud processes aligned with client business objectives,
+            including tailored data models, automation, and scalable custom logic.
+          </p>
+          <a href="#experience">See Experience</a>
+        </article>
+        <article class="card project">
+          <h4>LWC Modernization</h4>
+          <p>
+            Designed and implemented Lightning Web Components to create responsive and intuitive
+            interfaces for internal and client-facing Salesforce workflows.
+          </p>
+          <a href="#skills">View Skills</a>
+        </article>
+        <article class="card project">
+          <h4>Integration & Event Architecture</h4>
+          <p>
+            Built reliable third-party integrations with REST/SOAP APIs and implemented event-driven
+            communication using platform events, outbound messages, and HTTP callouts.
+          </p>
+          <a href="#contact">Discuss Collaboration</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills & Tools</h2>
+      <p class="section-subtitle">Core technologies and platforms I use in Salesforce development.</p>
+      <div class="skills">
+        <span class="tag">Apex</span>
+        <span class="tag">Lightning Web Components</span>
+        <span class="tag">Salesforce Admin</span>
+        <span class="tag">Sales Cloud</span>
+        <span class="tag">Service Cloud</span>
+        <span class="tag">SOQL</span>
+        <span class="tag">SOSL</span>
+        <span class="tag">Batch Apex</span>
+        <span class="tag">Future Methods</span>
+        <span class="tag">Platform Events</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">SOAP APIs</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Java</span>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <div class="card">
+        <div class="skills">
+          <span class="tag">Salesforce Certified Platform Developer II</span>
+          <span class="tag">Salesforce Certified Sales Cloud Consultant</span>
+          <span class="tag">Salesforce Certified Platform App Builder</span>
+          <span class="tag">Salesforce Certified Administrator</span>
+          <span class="tag">Salesforce Certified AI Associate</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card timeline">
+        <article class="item">
+          <h4>Dual Degree Integrated (B.E + M.Tech), Computer Science & Engineering</h4>
+          <p class="meta">Rajiv Gandhi Technical University, Bhopal, India | 2014 - 2019</p>
+          <p>Main coursework: Data Structures, Algorithm Analysis, DBMS, Software Engineering.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        If you are looking for a Salesforce Developer who can own delivery from design to release,
+        let us connect.
+      </p>
+      <div class="contact-wrap">
+        <div class="card contact-list">
+          <div><strong>Email:</strong> gupta.swati1205@gmail.com</div>
+          <div><strong>LinkedIn:</strong> linkedin.com/in/swaticodes</div>
+          <div><strong>Location:</strong> Bangalore, India</div>
+        </div>
+        <div class="card">
+          <h3>Current Focus</h3>
+          <p>
+            I am focused on delivering robust Salesforce implementations, modern LWC-based user
+            experiences, and integration architecture for enterprise-scale business workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Swati Gupta. Built with HTML and CSS.</div>
+  </footer>
+</body>
+</html>
