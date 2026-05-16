@@ -114,7 +114,16 @@
       color: var(--primary);
     }
 
-    .hero p {
+    .hero-role {
+      margin: 0.75rem 0 0;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      color: var(--primary);
+      font-weight: 600;
+      max-width: 62ch;
+      line-height: 1.35;
+    }
+
+    .hero-summary {
       margin-top: 1rem;
       color: var(--muted);
       max-width: 62ch;
@@ -275,9 +284,57 @@
       grid-column: span 4;
     }
 
+    .project-featured {
+      grid-column: span 12;
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      background: rgba(34, 197, 94, 0.15);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.65rem 0 0.85rem;
+    }
+
+    .project-tags span {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #cbd5e1;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     .project h4 {
       margin-top: 0;
       margin-bottom: 0.35rem;
+    }
+
+    .project-note {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
     }
 
     .project p {
@@ -310,6 +367,14 @@
       margin-right: 0.35rem;
     }
 
+    .contact-list a {
+      color: var(--primary);
+    }
+
+    .contact-list a:hover {
+      color: var(--primary-strong);
+    }
+
     footer {
       border-top: 1px solid rgba(148, 163, 184, 0.2);
       margin-top: 2rem;
@@ -327,7 +392,8 @@
 
       .about-card,
       .highlights-card,
-      .project {
+      .project,
+      .project-featured {
         grid-column: span 12;
       }
     }
@@ -350,8 +416,9 @@
   <main id="top" class="container">
     <section class="hero">
       <div>
-        <h1>Hi, I am <span>Swati Gupta</span>.<br />Software Engineer — Salesforce Cloud &amp; Java Integrations</h1>
-        <p>
+        <h1>Hi, I'm <span>Swati Gupta</span></h1>
+        <p class="hero-role">Software Engineer — Salesforce Cloud &amp; Java Integrations</p>
+        <p class="hero-summary">
           Software Engineer with 5+ years building Salesforce solutions on Sales Cloud, including
           Apex, Lightning Web Components, and REST/SOAP integrations for enterprise clients.
           Experienced in full SDLC delivery—from requirements and design through deployment and
@@ -447,32 +514,77 @@
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Representative implementation areas from enterprise engagements.</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        Open-source and personal learning projects showcasing Salesforce development and integration patterns.
+      </p>
       <div class="card-grid">
-        <article class="card project">
-          <h4>Sales Cloud Customization</h4>
+        <article class="card project project-featured">
+          <span class="badge">In Progress</span>
+          <h4>Brand Partner Sales Cloud Integration</h4>
           <p>
-            Configured and customized Sales Cloud processes aligned with client business objectives,
-            including tailored data models, automation, and scalable custom logic.
+            Personal learning project modeling brand-partner sales workflows on Salesforce using REST,
+            Composite REST, SOAP, Bulk API, and Platform Events. Independent project; not affiliated with Myntra.
           </p>
-          <a href="#experience">See Experience</a>
+          <div class="project-tags">
+            <span>Sales Cloud</span>
+            <span>REST API</span>
+            <span>Composite REST</span>
+            <span>SOAP API</span>
+            <span>Bulk API</span>
+            <span>Platform Events</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/swatipy/myntra-partner-salesforce-integration" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+          <p class="project-note">Repository setup in progress.</p>
         </article>
         <article class="card project">
-          <h4>LWC Modernization</h4>
+          <h4>Weather Dashboard</h4>
           <p>
-            Designed and implemented Lightning Web Components to create responsive and intuitive
-            interfaces for internal and client-facing Salesforce workflows.
+            LWC project demonstrating real-time external API integration using Apex callouts and modern
+            Salesforce security with Named Credentials and External Credentials.
           </p>
-          <a href="#skills">View Skills</a>
+          <div class="project-tags">
+            <span>LWC</span>
+            <span>Apex</span>
+            <span>HTTP Callouts</span>
+            <span>Named Credentials</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/swatipy/WeatherDashboard" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
         </article>
         <article class="card project">
-          <h4>Integration & Event Architecture</h4>
+          <h4>LWC Contact Manager</h4>
           <p>
-            Built reliable third-party integrations with REST/SOAP APIs and implemented event-driven
-            communication using platform events, outbound messages, and HTTP callouts.
+            Salesforce app for managing contacts with LWC UI, Apex controller backend, and Jest unit tests.
+            Supports create, view, and delete operations with Salesforce DX deployment workflow.
           </p>
-          <a href="#contact">Discuss Collaboration</a>
+          <div class="project-tags">
+            <span>LWC</span>
+            <span>Apex</span>
+            <span>Jest</span>
+            <span>Salesforce DX</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/swatipy/LWC-Contact-Manager" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </article>
+        <article class="card project">
+          <h4>LWC E-commerce</h4>
+          <p>
+            Learning demo for a lightweight product catalog and shopping cart using LWC component architecture.
+            Products are managed in local JavaScript state with a parent-driven catalog UI.
+          </p>
+          <div class="project-tags">
+            <span>LWC</span>
+            <span>JavaScript</span>
+            <span>Component Architecture</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/swatipy/LWC-Ecommerce" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
         </article>
       </div>
     </section>
@@ -531,6 +643,7 @@
         <div class="card contact-list">
           <div><strong>Email:</strong> gupta.swati1205@gmail.com</div>
           <div><strong>LinkedIn:</strong> linkedin.com/in/swaticodes</div>
+          <div><strong>GitHub:</strong> <a href="https://github.com/swatipy" target="_blank" rel="noopener noreferrer">github.com/swatipy</a></div>
           <div><strong>Location:</strong> Bangalore, India</div>
         </div>
         <div class="card">
