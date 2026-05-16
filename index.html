@@ -230,20 +230,6 @@
       padding: 1.1rem;
     }
 
-    .about-card {
-      grid-column: span 7;
-    }
-
-    .highlights-card {
-      grid-column: span 5;
-    }
-
-    .highlights-list {
-      margin: 0;
-      padding-left: 1rem;
-      color: var(--muted);
-    }
-
     .timeline .item + .item {
       margin-top: 1rem;
     }
@@ -261,7 +247,17 @@
     .item .meta {
       color: var(--muted);
       font-size: 0.92rem;
-      margin: 0.2rem 0 0.45rem;
+      margin: 0.2rem 0 0.6rem;
+    }
+
+    .item ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .item li + li {
+      margin-top: 0.35rem;
     }
 
     .skills {
@@ -390,8 +386,6 @@
         grid-template-columns: 1fr;
       }
 
-      .about-card,
-      .highlights-card,
       .project,
       .project-featured {
         grid-column: span 12;
@@ -404,10 +398,10 @@
     <div class="container nav">
       <a class="brand" href="#top">Swati<span>Codes</span></a>
       <nav class="nav-links">
-        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -419,12 +413,9 @@
         <h1>Hi, I'm <span>Swati Gupta</span></h1>
         <p class="hero-role">Software Engineer — Salesforce Cloud &amp; Java Integrations</p>
         <p class="hero-summary">
-          Software Engineer with 5+ years building Salesforce solutions on Sales Cloud, including
-          Apex, Lightning Web Components, and REST/SOAP integrations for enterprise clients.
-          Experienced in full SDLC delivery—from requirements and design through deployment and
-          release—for accounts such as Mercedes, BMW, Toshiba, and Gore International. Strong focus
-          on scalable asynchronous processing (batch Apex, future methods, platform events), clean
-          architecture, and measurable business outcomes.
+          Software Engineer specializing in Sales Cloud and enterprise integrations with Apex,
+          Lightning Web Components, and REST/SOAP APIs. I deliver solutions end to end—from design
+          through release—with a growing focus on Java and Spring Boot integration patterns.
         </p>
         <div class="cta-group">
           <a class="btn btn-primary" href="#projects">View My Work</a>
@@ -455,60 +446,29 @@
       </aside>
     </section>
 
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">
-        I turn business requirements into maintainable Salesforce implementations and API-driven
-        integrations through strong SDLC ownership, modern UI development, and robust backend design.
-      </p>
-      <div class="card-grid">
-        <article class="card about-card">
-          <p>
-            I have worked across enterprise accounts including Mercedes, BMW, Toshiba, and Gore
-            International. My experience spans requirements analysis, custom solution design,
-            development, testing, deployment, and release orchestration.
-          </p>
-          <p>
-            I specialize in Apex, Lightning Web Components, SOQL/SOSL optimization, and API-based
-            integrations using REST and SOAP. I enjoy building event-driven and asynchronous
-            systems that scale reliably with growing business needs.
-          </p>
-        </article>
-        <aside class="card highlights-card">
-          <h3>Highlights</h3>
-          <ul class="highlights-list">
-            <li>Led Salesforce solution delivery for global clients including Mercedes and BMW.</li>
-            <li>Built LWC-based responsive interfaces and reusable component patterns.</li>
-            <li>Implemented platform events, batch classes, and future methods at scale.</li>
-            <li>Received Infosys INSTA recognition for project impact and documentation quality.</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
     <section id="experience">
       <h2 class="section-title">Experience</h2>
-      <p class="section-subtitle">Roles where I delivered Salesforce implementations end-to-end.</p>
+      <p class="section-subtitle">Professional roles and key contributions.</p>
       <div class="card timeline">
         <article class="item">
-          <h4>Developer - Salesforce</h4>
-          <p class="meta">May 2022 - Present | Bangalore, Telangana</p>
-          <p>
-            Led development and implementation of Salesforce solutions for Mercedes and BMW,
-            including Sales Cloud customization, LWC development, SOQL/SOSL query design, and
-            integrations via REST/SOAP APIs. Built asynchronous capabilities with batch Apex,
-            future methods, platform events, outbound messages, and Apex callouts.
-          </p>
+          <h4>Developer — Salesforce</h4>
+          <p class="meta">May 2022 – Present · Bangalore, India</p>
+          <ul>
+            <li>Delivered Sales Cloud solutions for Mercedes and BMW, including customization, automation, and scalable Apex design.</li>
+            <li>Built Lightning Web Components and optimized SOQL/SOSL for performance-critical workflows.</li>
+            <li>Implemented REST/SOAP integrations with outbound messages, Apex callouts, and Named Credential patterns.</li>
+            <li>Designed asynchronous processing using batch Apex, future methods, and platform events.</li>
+          </ul>
         </article>
         <article class="item">
-          <h4>Salesforce Developer - Infosys</h4>
-          <p class="meta">Aug 2020 - Apr 2022 | Bangalore, Karnataka</p>
-          <p>
-            Managed SDLC for Toshiba and Gore International across requirements, development, test,
-            deployment, and release planning in Sales Cloud. Contributed to
-            Infosys Cobalt knowledge sharing, delivered comprehensive unit testing/documentation,
-            and earned the INSTA recognition award.
-          </p>
+          <h4>Salesforce Developer — Infosys</h4>
+          <p class="meta">Aug 2020 – Apr 2022 · Bangalore, India</p>
+          <ul>
+            <li>Managed end-to-end SDLC for Toshiba and Gore International on Sales Cloud—from requirements through production release.</li>
+            <li>Executed unit testing and created design and test documentation aligned with business requirements.</li>
+            <li>Contributed Salesforce best practices and knowledge articles to the Infosys Cobalt community.</li>
+            <li>Received the INSTA award for exceptional impact on Toshiba's inaugural project and documentation quality.</li>
+          </ul>
         </article>
       </div>
     </section>
